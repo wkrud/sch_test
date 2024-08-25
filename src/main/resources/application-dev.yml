@@ -1,0 +1,18 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: system
+    password: admin
+    driver-class-name: oracle.jdbc.OracleDriver
+
+logging:
+  level:
+    '[org.springframework.web]': DEBUG
+    '[org.hibernate]': DEBUG
