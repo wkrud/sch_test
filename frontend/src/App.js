@@ -1,10 +1,12 @@
 // import logo from './logo.svg';
 // import './App.css';
+import LlamaBox from "./comp/LlamaBox";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+      <div>
+        <LlamaBox/>
+      </div>
   );
 }
 
