@@ -1,4 +1,4 @@
-package com.test.sch.test.vo;
+package com.test.sch.sch_test.test.vo;
 
 import lombok.Getter;
 import lombok.Setter;

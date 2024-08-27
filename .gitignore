@@ -88,12 +88,6 @@ cmake-build-*/
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
-# File-based project format
-*.iws
-
-# IntelliJ
-out/
-
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
@@ -372,7 +366,6 @@ __generated__
 ### ReactNative.Android Stack ###
 # Gradle files
 .gradle/
-build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -387,7 +380,6 @@ captures/
 output.json
 
 # IntelliJ
-*.iml
 .idea/
 misc.xml
 deploymentTargetDropDown.xml
@@ -517,7 +509,6 @@ xcuserdata/
 *.xccheckout
 
 ### ReactNative.Gradle Stack ###
-.gradle
 **/build/
 !src/**/build/
 
@@ -532,12 +523,6 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
-
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -566,3 +551,17 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,intellij,java,reactnative,react,node
+/src/main/resources/static/static/js/453.8ab44547.chunk.js
+/src/main/resources/static/static/js/453.8ab44547.chunk.js.map
+/src/main/resources/static/asset-manifest.json
+/src/main/resources/static/favicon.ico
+/src/main/resources/static/index.html
+/src/main/resources/static/logo192.png
+/src/main/resources/static/logo512.png
+/src/main/resources/static/static/js/main.9a84b4a1.js
+/src/main/resources/static/static/js/main.9a84b4a1.js.LICENSE.txt
+/src/main/resources/static/static/js/main.9a84b4a1.js.map
+/src/main/resources/static/static/css/main.e6c13ad2.css
+/src/main/resources/static/static/css/main.e6c13ad2.css.map
+/src/main/resources/static/manifest.json
+/src/main/resources/static/robots.txt
