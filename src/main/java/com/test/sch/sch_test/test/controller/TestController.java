@@ -8,7 +8,8 @@ public class TestController {
 
 //    private TestService testService;
 
-    @GetMapping("/api/test")
+    //    @PostMapping("/api/generate")
+    @GetMapping("/test/hello")
     public String hello() {
         System.out.println("test contorller");
         return "테스트입니다.";

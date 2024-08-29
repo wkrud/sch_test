@@ -1,7 +1,7 @@
 import React, {useState, useRef} from "react";
 
-async function post(host, path, body, headers = {}) {
-    const url = `http://${host}/${path}`;
+async function post(path, body, headers = {}) {
+    const url = `http://localhost:11434${path}`;
     const options = {
         method: "POST",
         headers: {
@@ -11,6 +11,8 @@ async function post(host, path, body, headers = {}) {
         body: JSON.stringify(body),
     };
     const response = await fetch(url, options);
+    console.log(url);
+    console.log(response);
     const data = await response.json();
     if (response.ok) {
         return data;
@@ -52,7 +54,7 @@ function LlamaBox() {
             "stream": false
         };
 
-        post("localhost:11434", "api/generate", info)
+        post("/api/generate", info)
             .then((data) => {
                 // console.log(data);
                 // console.log(data.response);
