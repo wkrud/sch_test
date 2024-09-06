@@ -1,27 +1,29 @@
 import React, {useState, useRef} from "react";
+import post from "../common/Communication";
 
-async function post(path, body, headers = {}) {
-    const url = `http://localhost:11434${path}`;
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            ...headers
-        },
-        body: JSON.stringify(body),
-    };
-    const response = await fetch(url, options);
-    console.log(url);
-    console.log(response);
-    const data = await response.json();
-    if (response.ok) {
-        return data;
-    } else {
-        throw Error(data);
-    }
-}
+// async function post(path, body, headers = {}) {
+//     const url = `http://localhost:11434${path}`;
+//     const options = {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             ...headers
+//         },
+//         body: JSON.stringify(body),
+//     };
+//     const response = await fetch(url, options);
+//     console.log(url);
+//     console.log(response);
+//     const data = await response.json();
+//     if (response.ok) {
+//         return data;
+//     } else {
+//         throw Error(data);
+//     }
+// }
 
 function LlamaBox() {
+    const [responseData, setResponseData] = useState(null);
     const [inputs, setInputs] = useState({
         question: '',
         answer: ''
@@ -46,7 +48,7 @@ function LlamaBox() {
         });
     }
 
-    const sendInfo = () => {
+    const sendInfo = async () => {
         var info = {
             "model": "llama3.1",
             "prompt": question,
@@ -54,14 +56,19 @@ function LlamaBox() {
             "stream": false
         };
 
-        post("/api/generate", info)
-            .then((data) => {
-                // console.log(data);
-                // console.log(data.response);
-                var ans = data.response;
-                answerChange(ans);
-            })
-            .catch((error) => console.log(error));
+        const sendPost = await post("http://localhost:11434/api/generate", info);
+        setResponseData(sendPost);
+        console.log(responseData);
+        answerChange(responseData.response);
+
+        // post("http://localhost:11434/api/generate", info)
+        //     .then((data) => {
+        //         // console.log(data);
+        //         // console.log(data.response);
+        //         var ans = data.response;
+        //         answerChange(ans);
+        //     })
+        //     .catch((error) => console.log(error));
     };
     return (
         <div>
